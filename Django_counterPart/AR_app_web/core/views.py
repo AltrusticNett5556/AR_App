@@ -1,6 +1,10 @@
 # views.py
 from django.shortcuts import render
 
+<<<<<<< HEAD
+=======
+# Existing views
+>>>>>>> e62e01dc9a336f04529fe1547a297aa88c1be547
 def home(request):
     # Check if the 'click_counter' exists in the session, if not, initialize it
     if 'click_counter' not in request.session:
