@@ -1,8 +1,21 @@
+# views.py
 from django.shortcuts import render
 
+<<<<<<< HEAD
+=======
 # Existing views
+>>>>>>> e62e01dc9a336f04529fe1547a297aa88c1be547
 def home(request):
-    return render(request, 'core/index.html')
+    # Check if the 'click_counter' exists in the session, if not, initialize it
+    if 'click_counter' not in request.session:
+        request.session['click_counter'] = 0
+
+    # Check if the request is a POST to increment the counter
+    if request.method == 'POST':
+        request.session['click_counter'] += 1
+
+    # Pass the counter value to the template
+    return render(request, 'core/index.html', {'click_counter': request.session['click_counter']})
 
 def about(request):
     return render(request, 'core/about.html')
